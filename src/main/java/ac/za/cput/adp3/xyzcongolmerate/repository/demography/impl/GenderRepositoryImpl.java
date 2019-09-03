@@ -23,13 +23,20 @@ public class GenderRepositoryImpl implements GenderRepository {
     //TODO: Implement body
     @Override
     public Gender create(Gender gender) {
-        throw new UnsupportedOperationException("Not supported yet.");
+       this.genderDB.add(gender);
+       return gender;
     }
 
     //TODO: Implement body
     @Override
     public Gender read(String genderId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        for(Gender gender : genderDB)
+        {
+            if (gender.equals(genderId))
+            {
+                return gender;
+            }
+        }return null;
     }
 
     //TODO: Implement body
